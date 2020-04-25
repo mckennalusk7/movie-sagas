@@ -18,7 +18,14 @@ import App from "./components/App/App.js";
 const sagaMiddleware = createSagaMiddleware();
 
 // Create the rootSaga generator function
-function* rootSaga() {}
+function* rootSaga() {
+  yield takeEvery("GET_MOVIES", getMovies);
+  yield takeEvery("EDIT_MOVIES", editMovies);
+}
+
+// GET movies from server to store to the movieReducer
+
+//  SAGA POST plant
 
 // Used to store movies returned from the server
 const moviesReducer = (state = [], action) => {
