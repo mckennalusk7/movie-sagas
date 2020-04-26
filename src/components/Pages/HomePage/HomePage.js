@@ -1,22 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-class ListPage extends Component {
-    state = {
-     
-    };
-  
-    componentDidMount() {
-      this.props.dispatch({ type: "GET_LIST" });
-    }
-render() {
-    
+const mapStateToProps = (reduxState) => ({
+  reduxState,
+});
+
+class HomePage extends Component {
+  componentDidMount() {
+    this.props.dispatch({ type: "GET_MOVIES" });
+    // use component did mount to dispatch an action to request the HomePage from the API
+  }
+  render() {
+    return (
+      <div>
+        <h3>Movies Listed Here</h3>
+        <div>{this.props.store.movieReducer.map}</div>
+      </div>
+    );
+  }
 }
 
-
-
-
-
-const mapStoreToProps = (store) => ({ store });
-
-export default connect(mapStoreToProps)(ListPage);
+export default connect(mapStateToProps)(HomePage);
