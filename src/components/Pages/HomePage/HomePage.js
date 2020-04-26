@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import MovieList from "../MovieList/MovieList";
 
 import "./HomePage.css";
 
@@ -9,18 +10,11 @@ class HomePage extends Component {
     // use component did mount to dispatch an action to request the HomePage from the API
   }
   render() {
-    return (
-      <div>
-        <header className="header">
-          <h1 className="title"> THE GREATEST MOVIE LIST</h1>
-        </header>
-        <div>
-          {this.props.store.moviesReducer.map((movieList) => {
-            <MovieList key={movieList.id} movieList={movieList} />;
-          })}
-        </div>
-      </div>
-    );
+    const movies = this.props.store.movies.map((item, index) => {
+      return <MovieList key={index} movies={item} />;
+    });
+
+    return { movies };
   }
 }
 

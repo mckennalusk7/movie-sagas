@@ -12,6 +12,19 @@ class MovieList extends Component {
       payload: `/movies/${this.props.movieList.id}`,
     });
   };
+
+  render() {
+    return (
+      <div>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+        ></Grid>
+      </div>
+    );
+  }
 }
 
 const mapReduxStateToProps = (reduxState) => ({ reduxState });

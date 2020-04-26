@@ -12,7 +12,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="App"></div>
+        <div>
+          <header className="header">
+            <h1 className="title"> THE GREATEST MOVIE LIST</h1>
+          </header>
+        </div>
         <div>
           <Router>
             <Route exact path="/" component={HomePage} />
