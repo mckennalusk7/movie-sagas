@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-const mapStateToProps = (reduxState) => ({
-  reduxState,
-});
-
 class HomePage extends Component {
   componentDidMount() {
     this.props.dispatch({ type: "GET_MOVIES" });
@@ -20,4 +16,5 @@ class HomePage extends Component {
   }
 }
 
+const mapStateToProps = (store) => ({ store });
 export default connect(mapStateToProps)(HomePage);

@@ -1,12 +1,29 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 
-const DetailsPage = (props) => {
-  return (
-    <div>
-      <h2> Details Page!</h2>
-    </div>
-  );
-};
+class DetailsPage extends Component {
+  componentDidMount() {
+    this.props.dispatch({ type: "GET_MOVIES" });
+  }
 
+  handleBackButton = () => {
+    console.log("clicked back, happened");
+    this.props.history.push("/");
+  };
+
+  handleEditButton = () => {
+    console.log("edit happened");
+    this.props.push(`/edit/${this.props.match.params.id}`);
+  };
+
+  render() {
+    return (
+      <div>
+        <h2> Details Page!</h2>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (store) => ({ store });
 export default connect(mapStateToProps)(DetailsPage);
