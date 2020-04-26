@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import "./EditPage.css";
+
 class EditPage extends Component {
   state = {
     movieSelection: {
