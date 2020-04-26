@@ -11,11 +11,15 @@ class HomePage extends Component {
     // use component did mount to dispatch an action to request the HomePage from the API
   }
   render() {
-    const movies = this.props.store.movies.map((item, index) => {
-      return <MovieList key={index} movies={item} />;
-    });
+    //  I have changed this up 25 times, and I am still getting a 'not a function' error
 
-    return { movies };
+    return (
+      <div>
+        {this.props.store.movieList.map((item, index) => {
+          return <MovieList key={index} movies={item} />;
+        })}
+      </div>
+    );
   }
 }
 
