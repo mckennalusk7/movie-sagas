@@ -18,8 +18,8 @@ const sagaMiddleware = createSagaMiddleware();
 
 // Create the rootSaga generator function
 function* rootSaga() {
-  //   yield takeEvery("GET_MOVIES", getMovies);
-  //   yield takeEvery("EDIT_MOVIES", editMovies);
+  yield takeEvery("GET_MOVIES", getMovies);
+  yield takeEvery("UPDATE_MOVIES", updateMovieDetails);
 }
 
 // GET movies from server to store to the movieReducer
