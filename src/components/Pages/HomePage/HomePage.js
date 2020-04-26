@@ -7,10 +7,16 @@ class HomePage extends Component {
     // use component did mount to dispatch an action to request the HomePage from the API
   }
   render() {
+    const movieList = this.props.store.movieList.map((item, index) => {
+      return (key={index} item={movieList} )
+    });
+
     return (
-      <div>
-        <h3>Movies Listed Here</h3>
-        <div>{this.props.store.movieReducer.map}</div>
+      <div className="App">
+        <div className="App-header"></div>
+        <div>
+          <h3>Movie List:</h3>
+        </div>
       </div>
     );
   }
