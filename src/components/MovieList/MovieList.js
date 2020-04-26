@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
@@ -27,6 +26,4 @@ class MovieList extends Component {
   }
 }
 
-const mapReduxStateToProps = (reduxState) => ({ reduxState });
-
-export default withRouter(connect(mapReduxStateToProps)(MovieList));
+export default withRouter(MovieList);

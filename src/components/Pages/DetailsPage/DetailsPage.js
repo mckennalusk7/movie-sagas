@@ -27,5 +27,5 @@ class DetailsPage extends Component {
   }
 }
 
-const mapStateToProps = (store) => ({ store });
-export default connect(mapStateToProps)(DetailsPage);
+const mapStoreToProps = (store) => ({ store });
+export default connect(mapStoreToProps)(DetailsPage);

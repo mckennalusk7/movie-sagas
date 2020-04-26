@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import MovieList from "../MovieList/MovieList";
+import MovieList from "../../MovieList/MovieList";
+import Grid from "@material-ui/core/Grid";
 
 import "./HomePage.css";
 
@@ -18,5 +19,5 @@ class HomePage extends Component {
   }
 }
 
-const mapStateToProps = (store) => ({ store });
-export default connect(mapStateToProps)(HomePage);
+const mapStoreToProps = (store) => ({ store });
+export default connect(mapStoreToProps)(HomePage);
