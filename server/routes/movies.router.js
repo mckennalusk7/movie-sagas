@@ -4,7 +4,7 @@ const pool = require("../modules/pool");
 const router = express.Router();
 
 //  GET ROUTE to get movie from database
-router.get("/movie", (req, res) => {
+router.get("/", (req, res) => {
   const queryText = `SELECT * FROM "movies"
   ORDER BY "id";`;
 
@@ -51,7 +51,7 @@ router.put("/", (req, res) => {
   pool
     .query(queryText, queryValues)
     .then((result) => {
-      res.send(result.rows);
+      res.sendStatus(200);
     })
     .catch((err) => {
       console.log("error in completing movies query", err);
@@ -59,4 +59,4 @@ router.put("/", (req, res) => {
     });
 });
 
-modules.exports = router;
+module.exports = router;
