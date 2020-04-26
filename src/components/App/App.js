@@ -12,11 +12,17 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Router>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/details:id" component={DetailsPage} />
-          <Route exact path="/edit:id" component={EditPage} />
-        </Router>
+        <div className="App-header">
+          <h1> THE GREATEST MOVIE LIST</h1>
+        </div>
+        <div className="App"></div>
+        <div>
+          <Router>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/details:id" component={DetailsPage} />
+            <Route exact path="/edit:id" component={EditPage} />
+          </Router>
+        </div>
       </div>
     );
   }
