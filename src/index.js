@@ -32,7 +32,15 @@ function* getMovies(action) {
   }
 }
 
-//  SAGA POST plant
+//  PUT movies, so that user can update movie details
+function* updateMovieDetails(action) {
+  try {
+    yield axios.put("./api/movies/", action.payload);
+    yield put({ type: "GET_MOVIES" });
+  } catch (err) {
+    console.log("ERROR with PUT", err);
+  }
+}
 
 // Used to store movies returned from the server
 const moviesReducer = (state = [], action) => {
