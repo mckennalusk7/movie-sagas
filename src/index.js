@@ -1,7 +1,6 @@
 //  Imports
 import React from "react";
 import ReactDOM from "react-dom";
-import registerServiceWorker from "./registerServiceWorker";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 // Provider allows us to use redux within our react app
 import { Provider } from "react-redux";
@@ -24,6 +23,14 @@ function* rootSaga() {
 }
 
 // GET movies from server to store to the movieReducer
+function* getMovies(action) {
+  try {
+    const response = yield axios.get("/");
+    yield put({ type: "SET_MOVIES", payload: response.data });
+  } catch (err) {
+    console.warn("error with GET", err);
+  }
+}
 
 //  SAGA POST plant
 
@@ -66,4 +73,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-registerServiceWorker();
