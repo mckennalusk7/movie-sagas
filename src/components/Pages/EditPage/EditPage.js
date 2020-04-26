@@ -33,6 +33,16 @@ class EditPage extends Component {
     });
     this.props.history.push(`/movies/${this.props.params.id}`);
   };
+
+  handleClickCancel = (event) => {
+    this.setState({
+      movieSelection: {
+        title: "",
+        description: "",
+      },
+    });
+    this.props.history.push(`/movies/${this.props.params.id}`);
+  };
 }
 
 const mapStoreToProps = (store) => ({ store });
