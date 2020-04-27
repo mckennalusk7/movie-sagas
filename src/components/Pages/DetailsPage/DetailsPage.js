@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import "./DetailsPage.css";
-import MovieList from "../../MovieList/MovieList";
 
 class DetailsPage extends Component {
   componentDidMount() {
@@ -35,11 +34,11 @@ class DetailsPage extends Component {
         <button onCLick={this.handleBackButton}>Back</button>
         <button onClick={this.handleEditButton}>Edit</button>
         <div>
-          {this.props.store.getMovieSelection.map((movies) => {
+          {getMovieSelection.map((movies) => {
             return (
-              <div key={movie.id}>
-                <h2>{movie.title} </h2>
-                <h4> {movie.description}</h4>
+              <div key={movies.id}>
+                <h2>{movies.title} </h2>
+                <h4> {movies.description}</h4>
               </div>
             );
           })}
