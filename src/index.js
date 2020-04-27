@@ -25,7 +25,7 @@ function* rootSaga() {
 // GET movies from server to store to the movieReducer
 function* getMovies(action) {
   try {
-    const response = yield axios.get("/");
+    const response = yield axios.get("/movies");
     yield put({ type: "SET_MOVIES", payload: response.data });
   } catch (err) {
     console.warn("error with GET", err);

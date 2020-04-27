@@ -15,7 +15,7 @@ class HomePage extends Component {
 
     return (
       <div>
-        {this.props.store.movieList.map((item, index) => {
+        {this.props.store.moviesReducer.map((item, index) => {
           return <MovieList key={index} movies={item} />;
         })}
       </div>
